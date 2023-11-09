@@ -9,7 +9,7 @@ import BlynkLib
 import BlynkTimer
 
 
-# MQTT Server Parameters
+# Cài đặt thông số máy chủ MQTT
 MQTT_CLIENT_ID = "micropython-weather-demo"
 MQTT_BROKER    = "broker.mqttdashboard.com"
 MQTT_USER      = ""
@@ -57,8 +57,6 @@ def set_servo_angle(angle):
 rgbLedRed = Pin(32, Pin.OUT)
 rgbLedGreen = Pin(33, Pin.OUT)
 rgbLedBlue = Pin(25, Pin.OUT)
-
-time.sleep(1)
 
 # Gắn token của Blynk để kết nối
 BLYNK_AUTH_TOKEN = "EtYdkLhAaHAdHYlY6n9p82ILMvQI5Uxn"
