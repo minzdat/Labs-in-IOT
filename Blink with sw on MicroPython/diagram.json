@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "author": "Pinyo Mala",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20231005-v1.21.0" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 91.2,
+      "left": -86.95,
+      "rotate": 90,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 6,
+      "left": -72.6,
+      "attrs": { "color": "red", "flip": "" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 35,
+      "left": 134.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 147.95,
+      "left": 144,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "r1:2", "esp:GND.2", "black", [ "h0", "v27.6" ] ],
+    [ "esp:D12", "led1:A", "red", [ "h0" ] ],
+    [ "led1:C", "r1:1", "red", [ "v0" ] ],
+    [ "esp:3V3", "r2:1", "red", [ "v0" ] ],
+    [ "r2:2", "btn1:2.r", "red", [ "h18", "v-86.6" ] ],
+    [ "esp:D19", "btn1:1.l", "red", [ "h13.9", "v-24.2" ] ]
+  ],
+  "dependencies": {}
+}
