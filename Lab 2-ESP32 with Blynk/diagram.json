@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "author": "Uri Shaked",
+  "author": "Truong Minh Dat",
   "editor": "wokwi",
   "parts": [
     { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -19.2, "left": -43.16, "attrs": {} },
@@ -9,7 +9,7 @@
       "id": "dht1",
       "top": -9.3,
       "left": 90.6,
-      "attrs": { "temperature": "66.3" }
+      "attrs": { "temperature": "23.9", "humidity": "0" }
     },
     {
       "type": "wokwi-led",
@@ -49,6 +49,13 @@
       "top": 128.8,
       "left": -277.3,
       "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -54.46,
+      "left": 269.03,
+      "attrs": { "i2cAddress": "0x3c" }
     }
   ],
   "connections": [
@@ -71,7 +78,11 @@
     [ "rgb1:COM", "esp:GND.1", "black", [ "v57.2", "h163.3", "v-105.6" ] ],
     [ "rgb1:B", "esp:25", "blue", [ "v38.4", "h107.2", "v-124.8" ] ],
     [ "esp:33", "rgb1:G", "green", [ "h-105.45", "v144", "h-96" ] ],
-    [ "rgb1:R", "esp:32", "red", [ "v96", "h115.2", "v-201.6" ] ]
+    [ "rgb1:R", "esp:32", "red", [ "v96", "h115.2", "v-201.6" ] ],
+    [ "esp:GND.2", "oled1:GND", "black", [ "v-76.8", "h249.6" ] ],
+    [ "oled1:VCC", "esp:3V3", "red", [ "v-28.8", "h-355.05" ] ],
+    [ "esp:21", "oled1:SDA", "magenta", [ "h9.6", "v-153.6", "h268.8" ] ],
+    [ "esp:22", "oled1:SCL", "cyan", [ "h19.2", "v-115.2", "h249.6" ] ]
   ],
   "dependencies": {}
 }
